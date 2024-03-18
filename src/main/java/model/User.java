@@ -1,33 +1,27 @@
-package com.xadmin.usermanagement.model;
+package model;
 
-/**
- * User.java
- * This is a model class represents a User entity
- * @author Ramesh Fadatare
- *
- */
 public class User {
 	protected int id;
 	protected String name;
 	protected String email;
-	protected String country;
+//	protected String country;
 	
 	public User() {
 	}
 	
-	public User(String name, String email, String country) {
+	public User(String name, String email) {
 		super();
 		this.name = name;
 		this.email = email;
-		this.country = country;
+		
 	}
 
-	public User(int id, String name, String email, String country) {
+	public User(int id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.country = country;
+		
 	}
 
 	public int getId() {
@@ -48,10 +42,5 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	
 }
