@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="signup-content">
 					<div class="signup-form">
-						<h2 class="form-title">Sign up</h2>
+						<h2 class="form-title">S'inscrire</h2>
 					
 						<form method="post" action="RegisterServlet" class="register-form"
 							id="register-form">
@@ -60,7 +60,7 @@
 					</div>
 					<div class="signup-image">
 						<figure>
-							<img src="images/signup-image.jpg" alt="sing up image">
+							<img src="images/signup.jpg" alt="sing up image">
 						</figure>
 						<a href="login.jsp" class="signup-image-link">I am already
 							member</a>

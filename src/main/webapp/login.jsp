@@ -23,14 +23,14 @@
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="images/signin-image.jpg" alt="sing up image">
+							<img src="images/signin.jpg" alt="sing up image">
 						</figure>
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
 					</div>
 
 					<div class="signin-form">
-						<h2 class="form-title">Sign in</h2>
+						<h2 class="form-title">Se connecter</h2>
 						<form method="post" action="LoginServelet" class="register-form"
 							id="login-form">
 							<div class="form-group">
@@ -55,17 +55,7 @@
 									class="form-submit" value="Log in" />
 							</div>
 						</form>
-						<div class="social-login">
-							<span class="social-label">Or login with</span>
-							<ul class="socials">
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-google"></i></a></li>
-							</ul>
-						</div>
+						
 					</div>
 				</div>
 			</div>
