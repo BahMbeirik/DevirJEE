@@ -5,18 +5,18 @@ import java.io.Serializable;
 public class Produit implements Serializable{
 	protected int id;
 	protected String name;
-	protected String prix;
+	protected double prix;
 	public Produit() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Produit(String name, String prix) {
+	public Produit(String name, double prix) {
 		super();
 		this.name = name;
 		this.prix = prix;
 	}
 
-	public Produit(int id, String name, String prix) {
+	public Produit(int id, String name, double prix) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,10 +37,10 @@ public class Produit implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPrix() {
+	public double getPrix() {
 		return prix;
 	}
-	public void setPrix(String prix) {
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 	

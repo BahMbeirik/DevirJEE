@@ -9,9 +9,8 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.RequestDispatcher;
 import model.Produit;
 
-
-public class ReadServlet extends HttpServlet {
-	
+public class ClientProduitServlet extends HttpServlet {
+       
 	private static final long serialVersionUID = 1L;
 	private String jdbcURL = "jdbc:mysql://localhost:3306/devoirjee";
 	private String jdbcUsername = "root";
@@ -47,7 +46,7 @@ public class ReadServlet extends HttpServlet {
             
             // Rediriger vers la page JSP pour afficher les résultats
             
-            dispatcher = request.getRequestDispatcher("Read.jsp");
+            dispatcher = request.getRequestDispatcher("clientProduit.jsp");
             dispatcher.forward(request, response); // Include the first JSP page
             
         } catch (Exception e) {
@@ -66,4 +65,8 @@ public class ReadServlet extends HttpServlet {
             }
         }
     }
-}
+	}
+
+
+
+

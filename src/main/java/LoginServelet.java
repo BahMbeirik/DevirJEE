@@ -1,5 +1,4 @@
 
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -62,8 +61,14 @@ public class LoginServelet extends HttpServlet {
 				ResultSet rc = pst.executeQuery();
 				
 				if(rc.next()) {
-					session.setAttribute("name", rc.getString("username"));
-					dispatcher = request.getRequestDispatcher("index.jsp");
+					if(rc.getInt("role") == 0) {
+						session.setAttribute("name", rc.getString("username"));
+						dispatcher = request.getRequestDispatcher("clientIndex.jsp");
+					}
+					else{
+						session.setAttribute("name", rc.getString("username"));
+						dispatcher = request.getRequestDispatcher("index.jsp");
+					}
 				}else {
 					request.setAttribute("status", "failed");
 					dispatcher = request.getRequestDispatcher("login.jsp");

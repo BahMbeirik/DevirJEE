@@ -158,4 +158,34 @@
     <servlet-name>UpdateStock</servlet-name>
     <url-pattern>/UpdateStock</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClientProduitServlet</display-name>
+    <servlet-name>ClientProduitServlet</servlet-name>
+    <servlet-class>web.ClientProduitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientProduitServlet</servlet-name>
+    <url-pattern>/ClientProduitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddToPanierServlet</display-name>
+    <servlet-name>AddToPanierServlet</servlet-name>
+    <servlet-class>web.AddToPanierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToPanierServlet</servlet-name>
+    <url-pattern>/AddToPanierServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QteIncDec</display-name>
+    <servlet-name>QteIncDec</servlet-name>
+    <servlet-class>web.QteIncDec</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QteIncDec</servlet-name>
+    <url-pattern>/QteIncDec</url-pattern>
+  </servlet-mapping>
 </web-app>

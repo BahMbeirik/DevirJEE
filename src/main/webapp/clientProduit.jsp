@@ -1,19 +1,19 @@
+<%@page import="model.Produit"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter un prooduit</title>
+    <title>Liste des Produits</title>
     <link href="css/index-styles.css" rel="stylesheet" />
 </head>
-<body>
-<!-- Navigation-->
+<body id="page-top">
 	<nav
 		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 		id="mainNav">
 		<div class="container">
-			<a class="navbar-brand" href="/ProjetJEE/">Gestion de vente en ligne</a>
+			<a class="navbar-brand" href="clientIndex.jsp">Boutique</a>
 			<button
 				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
 				type="button" data-bs-toggle="collapse"
@@ -24,11 +24,11 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadServlet">Les Produit</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="ClientProduitServlet">Produits</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadStock">Les Stocks</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="panier.jsp">Panier</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadUser">Les utilisateurs</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="ordre">Les ordres</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp"><button class="btn btn-danger">Logout</button></a></li>
 					
@@ -36,29 +36,24 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container masthead ">
-    <h2>Ajouter un produit</h2>
-    <form action="CreateServlet" method="post"  class="row g-3 needs-validation d-block" novalidate>
-		   <div class="col-md-4">
-		    <label for="validationCustom01" class="form-label">Nom :</label>
-		    <input type="text" class="form-control" id="validationCustom01"  name="name" required>
-		    <div class="valid-feedback">
-		      Looks good!
-		    </div>
-		  </div>
-		  <div class="col-md-4">
-		    <label for="validationCustom01" class="form-label">Prix :</label>
-		    <input type="text" class="form-control" id="validationCustom01"  name="prix" required>
-		    <div class="valid-feedback">
-		      Looks good!
-		    </div>
-		  </div>
-        
-        <div class="col-12">
-        	<button type="submit" class="btn btn-primary">Ajouter</button>
+	<div class="container row gap-5 d-flex align-items-center justify-content-center" style="margin-top:20%;">
+	
+	<c:forEach var="produit" items="${produits}">
+	<div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><c:out value="${produit.name}" /></h5>
+                <p class="card-text"><c:out value="${produit.prix.toString()}" /></p>
+                <a href="AddToPanierServlet?id=<c:out value="${produit.id}" />" class="btn btn-primary">Ajouter au panier</a>
+                <a href="#" class="btn btn-danger">Acheter</a>
+            </div>
+            
         </div>
-    </form>
-    </div>
+       </div>
+    </c:forEach>
+	</div>
+
     
     
     <!-- Copyright Section-->

@@ -16,7 +16,7 @@ public class UpdateServlet extends HttpServlet {
 
     public void init() throws ServletException {
         // Initialize ProductService instance
-        productService = new ProduitDAO();
+        productService = new ProduitDAO(null);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +45,7 @@ public class UpdateServlet extends HttpServlet {
         // Retrieve updated product information from request parameters
         int id = Integer.parseInt(request.getParameter("id"));
         String updatedName = request.getParameter("name");
-        String updatedPrix = request.getParameter("prix");
+        double updatedPrix = Double.parseDouble(request.getParameter("prix"));
 
         // Retrieve product by ID
         Produit productToUpdate = null;
