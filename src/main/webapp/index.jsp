@@ -28,33 +28,7 @@ if(session.getAttribute("name")==null){
 </head>
 <body id="page-top">
 	<!-- Navigation-->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-		id="mainNav">
-		<div class="container">
-			<a class="navbar-brand" href="/ProjetJEE/">Gestion de vente en ligne</a>
-			<button
-				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-				type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
-				Menu <i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadServlet">Les Produit</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadStock">Les Stocks</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadUser">Les utilisateurs</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp"><button class="btn btn-danger">Logout</button></a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<jsp:include page="Navbar.jsp"></jsp:include>
 	<!-- Masthead-->
 	<header class="masthead bg-info text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
@@ -77,12 +51,7 @@ if(session.getAttribute("name")==null){
 	</header>
 	
 	
-	<!-- Copyright Section-->
-	<div class="copyright py-4 text-center text-white">
-		<div class="container">
-			<small>Copyright &copy; My Website 2024</small>
-		</div>
-	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
 
 	<!-- Bootstrap core JS-->
 	<script

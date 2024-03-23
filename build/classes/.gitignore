@@ -1,5 +1,2 @@
-/LoginServelet.class
-/RegisterServlet.class
 /dao/
-/model/
-/web/
+/connection/
