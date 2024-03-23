@@ -8,37 +8,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-/**
- * Servlet implementation class LoginServelet
- */
+
 @WebServlet("/LoginServelet")
 public class LoginServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-//    /**
-//     * @see HttpServlet#HttpServlet()
-//     */
-//    public LoginServelet() {
-//        super();
-//        // TODO Auto-generated constructor stub
-//    }
-//
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String uemail = request.getParameter("username");
@@ -61,13 +42,16 @@ public class LoginServelet extends HttpServlet {
 				ResultSet rc = pst.executeQuery();
 				
 				if(rc.next()) {
+					request.getSession().setAttribute("id", rc.getInt("id"));
 					if(rc.getInt("role") == 0) {
-						session.setAttribute("name", rc.getString("username"));
-						dispatcher = request.getRequestDispatcher("clientIndex.jsp");
+//						session.setAttribute("id", rc.getInt("id"));
+						response.sendRedirect("clientIndex.jsp");
+//						dispatcher = request.getRequestDispatcher("clientIndex.jsp");
 					}
 					else{
-						session.setAttribute("name", rc.getString("username"));
-						dispatcher = request.getRequestDispatcher("index.jsp");
+//						session.setAttribute("id", rc.getInt("id"));
+						response.sendRedirect("index.jsp");
+//						dispatcher = request.getRequestDispatcher("index.jsp");
 					}
 				}else {
 					request.setAttribute("status", "failed");

@@ -9,7 +9,9 @@
     <link href="css/index-styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+
 	<jsp:include page="NavbarClient.jsp"></jsp:include>
+
 	<div class="container row gap-5 d-flex align-items-center justify-content-center" style="margin-top:20%;">
 	
 	<c:forEach var="produit" items="${produits}">
@@ -20,7 +22,7 @@
                 <h5 class="card-title"><c:out value="${produit.name}" /></h5>
                 <p class="card-text"><c:out value="${produit.prix.toString()}" /></p>
                 <a href="AddToPanierServlet?id=<c:out value="${produit.id}" />" class="btn btn-primary">Ajouter au panier</a>
-                <a href="#" class="btn btn-danger">Acheter</a>
+                <a href="OrderNowServlet?quantite=1&id=<c:out value="${produit.id}"/>" class="btn btn-danger">Acheter</a>
             </div>
             
         </div>
