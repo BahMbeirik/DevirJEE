@@ -28,7 +28,7 @@
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="panier.jsp">Panier</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ordre">Les ordres</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="ordre.jsp">Les ordres</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp"><button class="btn btn-danger">Logout</button></a></li>
 					
@@ -46,7 +46,7 @@
                 <h5 class="card-title"><c:out value="${produit.name}" /></h5>
                 <p class="card-text"><c:out value="${produit.prix.toString()}" /></p>
                 <a href="AddToPanierServlet?id=<c:out value="${produit.id}" />" class="btn btn-primary">Ajouter au panier</a>
-                <a href="#" class="btn btn-danger">Acheter</a>
+                <a href="OrderNowServlet?quantite=1&id=<c:out value="${produit.id}"/>" class="btn btn-danger">Acheter</a>
             </div>
             
         </div>

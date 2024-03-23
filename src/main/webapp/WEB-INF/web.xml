@@ -4,6 +4,9 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <session-config>
+    <session-timeout>10080</session-timeout>
+  </session-config>
   <servlet>
     <description></description>
     <display-name>LoginServelet</display-name>
@@ -187,5 +190,35 @@
   <servlet-mapping>
     <servlet-name>QteIncDec</servlet-name>
     <url-pattern>/QteIncDec</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveFromPanierServlet</display-name>
+    <servlet-name>RemoveFromPanierServlet</servlet-name>
+    <servlet-class>web.RemoveFromPanierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveFromPanierServlet</servlet-name>
+    <url-pattern>/RemoveFromPanierServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderNowServlet</display-name>
+    <servlet-name>OrderNowServlet</servlet-name>
+    <servlet-class>web.OrderNowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderNowServlet</servlet-name>
+    <url-pattern>/OrderNowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AcheterToutServlet</display-name>
+    <servlet-name>AcheterToutServlet</servlet-name>
+    <servlet-class>web.AcheterToutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AcheterToutServlet</servlet-name>
+    <url-pattern>/AcheterToutServlet</url-pattern>
   </servlet-mapping>
 </web-app>
