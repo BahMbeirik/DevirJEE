@@ -41,15 +41,18 @@ public class ReadUser extends HttpServlet {
             
             // Exécuter la requête SQL pour récupérer tous les produits
             stmt = conn.createStatement();
-            String sql = "select * from admins";
+            String sql = "select * from users";
             rs = stmt.executeQuery(sql);
             // Traitement des résultats
             List<User> users = new ArrayList<>();
             while (rs.next()) {
             	User user = new User();
             	user.setId(rs.getInt("id"));
-            	user.setName(rs.getString("name"));
-            	user.setEmail(rs.getString("email"));
+            	user.setUsername(rs.getString("username"));
+            	user.setPassword(rs.getString("password"));
+            	user.setUemail(rs.getString("uemail"));
+            	user.setUmobile(rs.getString("umobile"));
+            	user.setRole(rs.getString("role"));
                 users.add(user);
             }
             

@@ -40,7 +40,7 @@ public class DeleteUser extends HttpServlet {
             conn = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
             // Prepare SQL statement to delete data
-            String sql = "DELETE FROM admins WHERE id = ?";
+            String sql = "DELETE FROM users WHERE id = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
 

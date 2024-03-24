@@ -37,39 +37,11 @@
 <link href="css/index-styles.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/></head>
 <body id="page-top">
-	<nav
-		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-		id="mainNav">
-		<div class="container">
-			<a class="navbar-brand" href="clientIndex.jsp">Boutique</a>
-			<button
-				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-				type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
-				Menu <i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded"
-						href="ClientProduitServlet">Produits</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="panier.jsp">Panier</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ordre.jsp">Les
-							ordres</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp"><button
-								class="btn btn-danger">Logout</button></a></li>
 
-				</ul>
-			</div>
-		</div>
-	</nav>
-</body>
+	<jsp:include page="NavbarClient.jsp"></jsp:include>
+	
+	<div class="container" style="margin-top: 15%;">
 
-<div class="container" style="margin-top: 15%;">
 	<div class="d-flex py-3">
 		<h3>Prix Totale : <%= sum %> </h3>
 		<a class="mx-3 btn btn-primary" href="AcheterToutServlet">Acheter tous</a>
@@ -124,4 +96,9 @@
 		</tbody>
 	</table>
 </div>
+	
+<div class="position-absolute bottom-0 end-0 w-100">
+	<jsp:include page="footer.jsp"></jsp:include>
+</div>
+</body>
 </html>

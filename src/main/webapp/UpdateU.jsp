@@ -1,82 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Modifier un user</title>
-    <link href="css/index-styles.css" rel="stylesheet" />
+    <title>Toggle Value</title>
+    <script>
+        function toggleValue() {
+            document.getElementById("toggleForm").submit();
+        }
+    </script>
 </head>
 <body>
-	<!-- Navigation-->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-		id="mainNav">
-		<div class="container">
-			<a class="navbar-brand" href="/ProjetJEE/">Gestion de vente en ligne</a>
-			<button
-				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
-				type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
-				Menu <i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadServlet">Les Produit</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadStock">Les Stocks</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="ReadUser">Les utilisateurs</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="login.jsp"><button class="btn btn-danger">Logout</button></a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container masthead ">
-    <h2>Modifier un user</h2>
-    <form action="UpdateUser" method="post" class="row g-3 needs-validation d-block" novalidate>
-   		 <input type="hidden" name="id" value="${userToUpdate.id}">
-    	<div class="col-md-4">
-		    <label for="validationCustom01" class="form-label">Nom :</label>
-		    <input type="text" class="form-control" id="validationCustom01"  name="name" value="${userToUpdate.name}" required>
-		    <div class="valid-feedback">
-		      Looks good!
-		    </div>
-		  </div>
-		  <div class="col-md-4">
-		    <label for="validationCustom01" class="form-label">Email :</label>
-		    <input type="text" class="form-control" id="validationCustom01"  name="email" value="${userToUpdate.email}" required>
-		    <div class="valid-feedback">
-		      Looks good!
-		    </div>
-		  </div>
-		  <div class="col-12">
-        	<button type="submit" class="btn btn-primary">Modifier</button>
-       	</div>
-        
+    <h1>Toggle Value</h1>
+    <form id="toggleForm" action="UpdateUser" method="post">
+        <input type="hidden" name="toggle" value="true">
+        <button type="button" onclick="toggleValue()">Toggle Value</button>
     </form>
-    </div>
-    
-    
-    <!-- Copyright Section-->
-	<div class="copyright py-4 text-center text-white">
-		<div class="container">
-			<small>Copyright &copy; My Website 2024</small>
-		</div>
-	</div>
-
-	<!-- Bootstrap core JS-->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Core theme JS-->
-	<script src="js/scripts.js"></script>
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-	<!-- * *                               SB Forms JS                               * *-->
-	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
