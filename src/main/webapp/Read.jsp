@@ -12,7 +12,12 @@
 	<jsp:include page="Navbar.jsp"></jsp:include>
 	<div class="container masthead text-center">
     <h2>Liste des produits</h2>
-    <a href="Create.jsp"><button class="btn btn-outline-success btn-sm bm">Ajouter un Produit</button></a>
+    <div class="d-flex ">
+    	
+    	<a href="Create.jsp"><button class="btn btn-outline-success btn-sm bm">Ajouter un Produit</button></a>
+    </div>
+     
+   
     <br>
     <table class="table">
         <tr>
@@ -39,6 +44,7 @@
         </c:forEach>
         
     </table>
+    
     </div>
     
     

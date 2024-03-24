@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import org.mindrot.jbcrypt.BCrypt;
 /**
  * Servlet implementation class Register
  */
@@ -19,13 +19,7 @@ import java.sql.SQLException;
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,11 +38,13 @@ public class RegisterServlet extends HttpServlet {
 				//creer la connection 
 				String url = "jdbc:mysql://localhost:3306/devoirjee?useSSL=false";
 			    conn = DriverManager.getConnection(url, "root", "");
+			 // Hash the password
+                String hashedPassword = BCrypt.hashpw(upass, BCrypt.gensalt());
 				//cree un etat de connection un utilisent class statement
 				PreparedStatement pst = conn.prepareStatement("insert into users(username,password,uemail,umobile ) values (?,?,?,?)");
 				
 				pst.setString(1,uname);
-				pst.setString(2,upass);
+				pst.setString(2,hashedPassword);
 				pst.setString(3, uemail);
 				pst.setString(4, umobile);
 				
@@ -60,6 +56,7 @@ public class RegisterServlet extends HttpServlet {
 				}else {
 					request.setAttribute("status", "failed");
 				}
+				
 				dispatcher.forward(request, response);
 				
 				

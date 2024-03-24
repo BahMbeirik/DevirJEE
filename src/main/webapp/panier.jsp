@@ -97,7 +97,7 @@
 	</table>
 </div>
 	
-<div class="position-absolute bottom-0 end-0 w-100">
+<div class=" bottom-0 end-0 w-100">
 	<jsp:include page="footer.jsp"></jsp:include>
 </div>
 </body>

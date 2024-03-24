@@ -59,7 +59,7 @@ public class UpdateServlet extends HttpServlet {
         // Update product object with new information
         productToUpdate.setName(updatedName);
         productToUpdate.setPrix(updatedPrix);
-        // Update other fields as needed
+        
 
         // Update product in the database
         try {
