@@ -11,6 +11,14 @@
 	<!-- Navigation-->
 	<jsp:include page="Navbar.jsp"></jsp:include>
 	<div class="container masthead text-center">
+	<div class="d-flex align-items-center justify-content-center mb-4">
+	<form action="ReadStock" method="get" class="input-group w-25">
+            <input type="text" name="search" class="form-control" placeholder="Rechercher un produit" value="${searchQuery}">
+            <input type="submit" class="btn btn-outline-primary" data-mdb-ripple-init value="Chercher">
+     </form>
+     </div>
+
+     
     <h2>Liste des stocks</h2>
     <a href="CreateS.jsp"><button class="btn btn-outline-success btn-sm bm">Ajouter un Stock</button></a>
     <br>
@@ -39,20 +47,29 @@
         </c:forEach>
         
     </table>
+    <!-- Pagination -->
+        <ul class="pagination justify-content-center">
+            <li class="page-item <c:if test="${currentPage == 1}">disabled</c:if>">
+                <a class="page-link" href="?page=1">Precedent</a>
+            </li>
+            <c:forEach var="page" begin="1" end="${totalPages}" step="1">
+                <li class="page-item <c:if test="${currentPage eq page}">active</c:if>">
+                    <a class="page-link" href="?page=${page}">${page}</a>
+                </li>
+            </c:forEach>
+            <li class="page-item <c:if test="${currentPage == totalPages}">disabled</c:if>">
+                <a class="page-link" href="?page=${totalPages}">Suivant</a>
+            </li>
+        </ul>
     </div>
     
     
    <jsp:include page="footer.jsp"></jsp:include>
 
-	<!-- Bootstrap core JS-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-	<!-- * *                               SB Forms JS                               * *-->
-	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
