@@ -22,7 +22,8 @@ public class ProduitDAO {
 
     // SQL queries
     private static final String SELECT_PRODUCT_BY_ID = "SELECT id, name, prix FROM produit WHERE id = ?";
-    private static final String UPDATE_PRODUCT = "UPDATE produit SET name = ?, prix = ? WHERE id = ?";
+    private static final String UPDATE_PRODUCT = "UPDATE produit SET name = ?, prix = ?, image_path = ? WHERE id = ?";
+
     
     public ProduitDAO(Connection con) {
 		super();
@@ -49,9 +50,19 @@ public class ProduitDAO {
     public void updateProduct(Produit updatedProduct) throws SQLException {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(UPDATE_PRODUCT)) {
-            stmt.setString(1, updatedProduct.getName());
-            stmt.setDouble(2, updatedProduct.getPrix());
-            stmt.setInt(3, updatedProduct.getId());
+        	stmt.setString(1, updatedProduct.getName());
+        	stmt.setDouble(2, updatedProduct.getPrix());
+        	stmt.setString(3, updatedProduct.getImagePath());
+        	stmt.setInt(4, updatedProduct.getId());
+            stmt.executeUpdate();
+        }
+    }
+    
+    public void updateImagePath(int productId, String imagePath) throws SQLException {
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(UPDATE_PRODUCT)) {
+            stmt.setString(1, imagePath);
+            stmt.setInt(2, productId);
             stmt.executeUpdate();
         }
     }

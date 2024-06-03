@@ -6,6 +6,7 @@ public class Stock implements Serializable{
 		protected int id;
 		protected String idP;
 		protected String quantite;
+		private String productName;
 		
 	
 		public Stock() {
@@ -55,6 +56,16 @@ public class Stock implements Serializable{
 
 		public void setQuantite(String quantite) {
 			this.quantite = quantite;
+		}
+
+
+		public String getProductName() {
+			return productName;
+		}
+
+
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 		
 		

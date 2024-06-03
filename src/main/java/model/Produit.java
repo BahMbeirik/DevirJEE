@@ -6,6 +6,8 @@ public class Produit implements Serializable{
 	protected int id;
 	protected String name;
 	protected double prix;
+	protected String imagePath; // حقل لمسار الصورة
+	
 	public Produit() {
 		// TODO Auto-generated constructor stub
 	}
@@ -43,6 +45,14 @@ public class Produit implements Serializable{
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+	
+	public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 	
 	
 }

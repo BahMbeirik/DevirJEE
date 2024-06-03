@@ -38,7 +38,7 @@ public class LoginServelet extends HttpServlet {
             if (rc.next() && BCrypt.checkpw(upass, rc.getString("password"))) {
                 session.setAttribute("id", rc.getInt("id"));
                 if (rc.getInt("role") == 0) {
-                    response.sendRedirect("clientIndex.jsp");
+                    response.sendRedirect("ClientProduitServlet");
                 } else {
                     response.sendRedirect("index.jsp");
                 }
